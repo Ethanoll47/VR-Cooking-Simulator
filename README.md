@@ -24,9 +24,12 @@ The player can connect a force-sensing glove to the application by selecting the
 <br>
 Objects in the application are separated into dynamic (highlighted in orange) and static objects. Dynamic objects are objects that can moved by the player during the application’s runtime whereas static objects are any objects that cannot be picked up or moved by the player during the application’s runtime. Some of the dynamic objects include a cup, pot, plate, frying pan, bowl, knife, raw steak, potato, lemon, and kitchen stove. The player can interact with these objects using hand gestures such as pinching and grabbing. This is achieved by attaching a script called “Grabbable” to every dynamic object. This script is a part of the Oculus Interaction SDK and is used to enable objects to be grabbed by the player within a virtual environment. Additionally, this script has been modified to include the Boolean variable “includeInExperiment” to allow the object to be made grabbable with or without the force-sensing glove depending on the application’s current glove mode option. For example, if “includeInExperiment” is set to true, the current object can only be picked up after the player applies a certain amount of force using the force-sensing glove.
 <br>
+<br>
 Besides that, every dynamic object requires a “Rigidbody” and “Collider” component to simulate realistic physics for the object. In other words, these components will enable objects to behave realistically in response to forces, collisions, and gravity. The “Rigidbody” component contains a variable called “mass” which will be set in accordance with the object's actual weight in the real world. 
 <br>
+<br>
 Lastly, a "ForceManager" script is attached to each dynamic object and is used when the application's glove mode is set to "On”. This script has a variable called “weight” that stores the minimum force necessary to pick up the object. When the player tries to pick up an object, the script will check whether the player’s hand gesture is pinching or grabbin. If the gesture is correct, the player's applied force with the force-sensing glove is collected. If the applied force is more than or equal to the minimum force required to lift the current object, the object will be picked up by the player’s hand.
+<br>
 <br>
 **Slicing**
 <br>
@@ -36,12 +39,11 @@ All food objects in the application can be sliced into smaller pieces using the 
 <br>
 <br>
 **Cooking**
- <br>
+<br>
 ![Cooking](images/cooking.png)
 <br>
 All food objects in the application can be cooked using the stove. After the stove is turned on, a fire will be emitted. When the food object touches the fire, the food object will begin to cook. This is achieved by attaching the “CookingController” script to each food object. This script will detect when the food object is exposed to fire and change its colour gradually from its current colour to a burnt colour using the “LerpColor()” function. When the object leaves the fire, the colour change process is stopped. Additionally, the script will play a unique cooking audio when the object is cooking. For example, a steak will make a sizzling sound when it is cooked on a frying pan whereas a potato will make a boiling sound when it is cooked in a pot of water.
 <br>
 # External Libraries
-<br>
 <br>
 Ezy-Slice by https://github.com/DavidArayan/ezy-slice

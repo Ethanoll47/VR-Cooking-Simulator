@@ -27,16 +27,6 @@ Objects in the application are separated into dynamic (highlighted in orange) an
 Besides that, every dynamic object requires a “Rigidbody” and “Collider” component to simulate realistic physics for the object. In other words, these components will enable objects to behave realistically in response to forces, collisions, and gravity. The “Rigidbody” component contains a variable called “mass” which will be set in accordance with the object's actual weight in the real world. 
 <br>
 Lastly, a "ForceManager" script is attached to each dynamic object and is used when the application's glove mode is set to "On”. This script has a variable called “weight” that stores the minimum force necessary to pick up the object. When the player tries to pick up an object, the script will check whether the player’s hand gesture is pinching or grabbin. If the gesture is correct, the player's applied force with the force-sensing glove is collected. If the applied force is more than or equal to the minimum force required to lift the current object, the object will be picked up by the player’s hand.
-
-<br>
-**Hero Abilities**
-<br>
-![Hero Abilities Details](images/heroAbilities.png)
-<br>
-![Disable Abilty Buttons](images/buttonDisabled.png)
-<br>
-Every hero in the game has a unique set of 4 abilities. Every ability can have a mixture of traits which are attack, heal or add agility. Additionally, every ability has a cost which will be deducted from the hero’s stamina once the ability is used. An ability cannot be used if the hero’s stamina does not meet the ability’s cost requirement. This is visualised in the GUI shown below where the ability buttons will be disabled based on the hero’s stamina.
-<br>
 <br>
 **Slicing**
 <br>
@@ -51,19 +41,6 @@ All food objects in the application can be sliced into smaller pieces using the 
 <br>
 All food objects in the application can be cooked using the stove. After the stove is turned on, a fire will be emitted. When the food object touches the fire, the food object will begin to cook. This is achieved by attaching the “CookingController” script to each food object. This script will detect when the food object is exposed to fire and change its colour gradually from its current colour to a burnt colour using the “LerpColor()” function. When the object leaves the fire, the colour change process is stopped. Additionally, the script will play a unique cooking audio when the object is cooking. For example, a steak will make a sizzling sound when it is cooked on a frying pan whereas a potato will make a boiling sound when it is cooked in a pot of water.
 <br>
-<br>
-**Dialog Box**
-<br>
-![Dialog Box](images/dialogBox.png)
-<br>
-In the application’s menu bar, the user can access the heroes list dialog box to find more information about the heroes and their roles in the game. This feature is especially useful for the player to strategize their next move in the game.
-<br>
-<br>
-**Fade Animation**
-<br>
-![Fade Amimation](images/fade.png)
-Once an ability is used, a text that displays the ability that was by the player will appear and disappear after 2.5 seconds. This animation will inform the player which ability was used and can act as a confirmation message for the ability.
- <br>
 # External Libraries
 <br>
 <br>
